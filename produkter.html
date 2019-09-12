@@ -10,19 +10,28 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo"></div>
-    </header>
 
     <h2 class="filterTekst">ALLE</h2>
 
-    <nav>
+
+    <nav class="filter">
+        <header>
+            <nav>
+                <div id="menuknap">☰</div>
+                <ul id="menu" class="hidden">
+                    <li><a href="startside.html">STARTSIDE</a></li>
+                    <li><a href="produkter.html">PRODUKTER</a></li>
+                    <li><a href="om.html">OM</a></li>
+                    <li><a href="kontakt.html">KONTAKT</a></li>
+                </ul>
+
+            </nav>
+        </header>
         <button class="filter valgt" data-kategori="alle">ALLE</button>
         <button class="filter" data-favoritter="1">FAVORITTER</button>
         <button class="filter" data-kategori="indendoers">INDENDØRS</button>
         <button class="filter" data-kategori="udendoers">UDENDØRS</button>
         <button class="filter" data-kategori="potter">POTTER</button>
-
     </nav>
 
 
@@ -38,10 +47,10 @@
     </template>
 
     <footer>
-        <p class="footer1">FIGNESTRÆDE 22</p>
-        <p class="footer2">1234 KØBENHAVN K</p>
-        <p class="footer3">TLF. XX XX XX XX</p>
-        <p class="footer4">PLANTER@MAIL.DK</p>
+        <p>FIGNESTRÆDE 12</p>
+        <p>1234 KØBENHAVN K</p>
+        <p>TLF. 11 22 33 44</p>
+        <p>PLANTEGURU@MAIL.COM</p>
     </footer>
 
 
@@ -82,7 +91,7 @@
 
                     klon.querySelector("img").src = `imgs/${plante.gsx$billede.$t}.jpg`;
                     klon.querySelector("article h2").textContent = ` ${plante.gsx$navn.$t}`;
-                    klon.querySelector("article .kort_beskrivelse").textContent = ` ${plante.gsx$navn.$t}`;
+                    klon.querySelector("article .kort_beskrivelse").textContent = ` ${plante.gsx$kort.$t}`;
 
 
                     listevisning.appendChild(klon);
@@ -130,6 +139,9 @@
             }
 
         }
+
     </script>
 
-</body></html>
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 /************   INDHOLDSFORTEGNELSE  **************/
-/************   1. GENNERELT  **************/
+/************   1. GENERELT  **************/
 /************   2. FORSIDE  **************/
 /************   3. PRODUKTER **************/
 /************   4. ENKELT SIDE **************/
@@ -7,8 +7,15 @@
 /************   6. KONTAKT    **************/
 /************   7. MEDIA  Q  **************/
 
-/************   1. GENNERELT  **************/
+/************   1. GENERELT  **************/
 
+@font-face {
+    font-family: 'helvetica';
+    src: url('fonts/HelveticaNeueLTStd-MdCn.woff2') format('woff2'),
+        url('fonts/HelveticaNeueLTStd-MdCn.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
     margin: 0;
@@ -18,18 +25,44 @@ body {
 h1 {
     text-align: center;
     margin: 0;
+    font-family: 'helvetica';
+    color: #3B3B3B;
+    font-size: 40px;
 }
 
 h2 {
     text-align: center;
     color: #3B3B3B;
+    font-family: 'helvetica';
+    font-size: 30px;
+
+}
+
+h3 {
+    font-family: 'helvetica';
+    color: #3B3B3B;
+}
+
+p {
+    font-family: 'helvetica';
+    margin: 20px;
+    color: #3B3B3B;
+}
+
+.txt {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 footer {
     background-color: #6A7550;
     margin-top: 20px;
-    color: white;
     padding: 10px;
+    font-family: 'helvetica';
+}
+
+footer p {
+    color: white;
 }
 
 img {
@@ -37,12 +70,158 @@ img {
 }
 
 body {
-    font-family: font37265;
+    font-family: 'helvetica';
 }
 
-/************   2. FORSIDE  **************/
+/********MENU - desktop*********/
 
 
+a {
+    text-decoration: none;
+}
+
+nav {
+    color: white;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding-bottom: 20px;
+    font-family: 'helvetica';
+    text-align: left;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    color: ;
+}
+
+.active {
+    color: ;
+}
+
+/************BURGER MENU - desktop*******/
+
+@media only screen and (max-width: 600px) {
+
+    .hidden {
+        transform: translateY(-100%);
+        opacity: 0;
+
+    }
+
+    #menuknap {
+        display: inline-block;
+        top: 10px;
+        right: 10px;
+        position: absolute;
+        z-index: 2;
+        font-family: 'helvetica';
+        font-size: 8vw;
+    }
+
+    #menu {
+        list-style-type: none;
+        transition: transform .3s;
+        transform-origin: top left;
+        background: rgba(103, 114, 77, 0.74);
+        z-index: 1;
+        padding: 150px;
+        padding-bottom: 100%;
+        margin-top: -10px;
+        margin-right: -10px;
+        font-size: 20px;
+
+    }
+
+    #menu li {
+        padding-top: 30px;
+    }
+
+}
+
+
+/************   2. STARTSIDE  **************/
+
+header {
+    margin-top: -20px;
+}
+
+.vis_produkter {
+    border: solid 2px white;
+    padding: 20px 0px;
+    text-align: center;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    font-family: 'helvetica';
+    font-size: 25px;
+    color: white;
+    z-index: 500;
+}
+
+.vis_produkter a {
+    color: white;
+}
+
+h1 {
+    font-family: 'helvetica';
+}
+
+
+/*******SPLASH på forside - mobil********/
+
+#splash {
+    width: 100vw;
+    height: 150vw;
+    background-image: url(billeder/header_2.jpg);
+    background-size: cover;
+    background-position: 55%;
+    margin-top: 0px;
+    z-index: 80;
+    margin-bottom: 50px;
+}
+
+.logo {
+    width: 100vw;
+    height: 40vw;
+    padding-top: 150px;
+}
+
+
+
+
+/********SPLASH - desktop*******/
+
+@media (orientation: landscape) {
+    #splash {
+        width: 100vw;
+        height: 56.25vw;
+        background-position: 0% 0%;
+        margin-top: 0vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .logo {
+        padding-top: 20px;
+        margin-bottom: -80px;
+    }
+
+    .vis_produkter {
+        font-size: 40px;
+        padding: 20px 40px;
+    }
+}
 
 /************   3. PRODUKTER **************/
 
@@ -50,20 +229,25 @@ body {
     font-size: 2rem;
 }
 
-nav {
+
+.filter {
     display: flex;
     flex-direction: column;
-    margin: 10px;
-    text-align: center;
-
+    margin: 5px auto;
+    padding: 10px;
+    position: relative;
+    font-family: 'helvetica';
 }
 
 button {
-    padding: 10px;
-    background-color: #E8E6E2;
+    background-color: transparent;
     border: 2px solid #3B3B3B;
-    margin: 5px;
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+    color: #3B3B3B;
 }
+
 
 .valgt {
     background-color: #6A7550;
@@ -83,8 +267,13 @@ button {
 
 
 article {
-
     padding: 10px;
+}
+
+article p,
+article h2 {
+    text-align: left;
+    margin: 10px 0px;
 }
 
 .nr {
@@ -100,11 +289,22 @@ article {
 }
 
 
+@media screen and (min-width: 1000px) {
+
+    .filter {
+        display: flex;
+        flex-direction: row;
+    }
+
+    button {
+        width: 200px;
+
+    }
+}
 
 
 
-
-/************   ENKELT SIDE  **************/
+/************ 4.  ENKELT SIDE  **************/
 
 
 .popup {
@@ -147,18 +347,38 @@ button {
 /************   5.  OM      **************/
 
 
+#om {
+    margin-top: -10px;
+}
 
 
 /************   6.  KONTAKT    **************/
 
+#kontakt {
+    margin-top: -110px;
+}
 
+#kontakt h1 {
+    margin-bottom: 40px;
+}
 
+.sm_ikoner {
+    display: flex;
+    height: 20vw;
+    width: 20vw;
+    margin-left: 50vw;
+}
+
+.sm_ikoner img {
+    margin-right: 20px;
+}
 
 
 /************   7. MEDIA  Q  **************/
 @media screen and (min-width: 600px) {
     .data_container {
         grid-template-columns: repeat(2, 1fr);
+
     }
 
     footer {
@@ -167,13 +387,42 @@ button {
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
     .data_container {
         grid-template-columns: repeat(3, 1fr);
+        max-width: 1100px;
     }
 
     header {
         height: 100px;
         background-color: #6A7550;
     }
+
+    .filter {
+        max-width: 1100px;
+    }
+
+}
+
+
+@media screen and (min-width: 1000px) {
+
+    #kontakt,
+    #om {
+        display: flex;
+        flex-direction: row;
+        margin: 0px;
+        margin-bottom: -20px;
+    }
+
+    #kontakt .txt,
+    #om .txt {
+        margin: 100px;
+    }
+
+    #kontakt h2,
+    #om h2 {
+        margin-bottom: 20px;
+    }
+
 }
