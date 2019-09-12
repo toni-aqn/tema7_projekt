@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #E8E6E2;
+        }
+
+        .filterTekst {
+            font-size: 2rem;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            text-align: center;
+
+        }
+
+        button {
+            padding: 10px;
+            background-color: #E8E6E2;
+            border: 2px solid #3B3B3B;
+            margin: 5px;
+        }
+
+        .valgt {
+            background-color: #6A7550;
+            border-color: white;
+            color: white;
+        }
+
+        .data_container {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(1, 1fr);
+            max-width: 900px;
+            text-align: center;
+            margin: 10px auto;
+            padding: 10px;
+        }
+
+
+        h1 {
+            text-align: center;
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #3B3B3B;
+        }
+
+        article {
+
+            padding: 10px;
+        }
+
+        .nr {
+            font-size: 2rem;
+            color: green;
+            text-align: right;
+            margin: 0;
+        }
+
+        .pris {
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        footer {
+            background-color: #6A7550;
+            margin-top: 20px;
+            color: white;
+            padding: 10px;
+        }
+
+
+        @media screen and (min-width: 600px) {
+            .data_container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            footer {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            .data_container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            header {
+                height: 100px;
+                background-color: #6A7550;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"></div>
+    </header>
+
+    <h2 class="filterTekst">ALLE</h2>
+
+    <nav>
+        <button class="filter valgt" data-kategori="alle">ALLE</button>
+        <button class="filter" data-kategori="forretter" data-hold="alle">FAVORITTER</button>
+        <button class="filter" data-kategori="hovedretter" data-hold="alle">INDENDØRS</button>
+        <button class="filter" data-kategori="sideorders">UDENDØRS</button>
+        <button class="filter" data-kategori="desserter" data-hold="alle">POTTER</button>
+
+    </nav>
+
+
+    <section class="data_container"></section>
+
+    <template>
+        <article>
+            <img src="" alt="billede">
+            <h2></h2>
+            <p class="kort_beskrivelse"></p>
+
+        </article>
+    </template>
+
+    <footer>
+        <p class="footer1">FIGNESTRÆDE 22</p>
+        <p class="footer2">1234 KØBENHAVN K</p>
+        <p class="footer3">TLF. XX XX XX XX</p>
+        <p class="footer4">PLANTER@MAIL.DK</p>
+    </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", hentjson);
+
+        let planter;
+        let filter = "alle";
+
+        const listevisning = document.querySelector(".data_container");
+        const template = document.querySelector("template");
+
+        async function hentjson() {
+            console.log("hentjson");
+
+            let myRawjson = await fetch("https://spreadsheets.google.com/feeds/list/1pUeq7DL83r8HprlFhAdWsyy4jInr6mneRbFrKSbq2fY/od6/public/values?alt=json");
+
+            planter = await myRawjson.json();
+            //  console.log(myjson);
+
+            informationer();
+            addEventlistenerToButton();
+
+        }
+
+        function informationer() {
+            console.log("køre");
+
+            listevisning.innerHTML = "";
+
+
+            planter.feed.entry.forEach((plante) => {
+
+                if (filter == "alle" || filter == ret.gsx$kategori.$t) {
+
+
+                    const klon = template.cloneNode(true).content;
+
+                    klon.querySelector("img").src = `imgs/small/${ret.gsx$billede.$t}-sm.jpg`;
+                    klon.querySelector("article h2").textContent = ` ${ret.gsx$navn.$t}`;
+                    klon.querySelector("article .kort_beskrivelse").textContent = ` ${ret.gsx$kort.$t}`;
+                    klon.querySelector("article .pris").textContent = `Pris: ${ret.gsx$pris.$t} kr`;
+
+                    klon.querySelector("article .nr").textContent = `Nr:  ${ret.gsx$id.$t}`;
+
+                    listevisning.appendChild(klon);
+                    listevisning.lastElementChild.addEventListener("click", () => {
+                        location.href = `enkeltside.html?nr=${ret.gsx$id.$t}`;
+                    });
+
+                }
+
+            });
+        }
+
+        function addEventlistenerToButton() {
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            });
+        }
+
+        function filtrering() {
+            filter = this.dataset.kategori;
+            document.querySelector("h2").textContent = this.textContent;
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.classList.remove("valgt");
+                console.log(`${filter}`);
+            });
+
+            this.classList.add("valgt");
+
+            informationer();
+        }
+    </script>
+
+</body></html>
