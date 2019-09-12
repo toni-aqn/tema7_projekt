@@ -32,6 +32,10 @@ footer {
     padding: 10px;
 }
 
+img {
+    width: 100%;
+}
+
 /************   2. FORSIDE  **************/
 
 
@@ -91,9 +95,7 @@ article {
     font-weight: 600;
 }
 
-img {
-    width: 100%;
-}
+
 
 
 

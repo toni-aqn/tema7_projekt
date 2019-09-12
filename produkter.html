@@ -18,10 +18,10 @@
 
     <nav>
         <button class="filter valgt" data-kategori="alle">ALLE</button>
-        <button class="filter" data-kategori="forretter" data-hold="alle">FAVORITTER</button>
-        <button class="filter" data-kategori="hovedretter" data-hold="alle">INDENDØRS</button>
-        <button class="filter" data-kategori="sideorders">UDENDØRS</button>
-        <button class="filter" data-kategori="desserter" data-hold="alle">POTTER</button>
+        <button class="filter" data-favoritter="favoritter">FAVORITTER</button>
+        <button class="filter" data-kategori="indendoers">INDENDØRS</button>
+        <button class="filter" data-kategori="udendoers">UDENDØRS</button>
+        <button class="filter" data-kategori="potter">POTTER</button>
 
     </nav>
 
@@ -30,7 +30,7 @@
 
     <template>
         <article>
-            <img src="" alt="billede">
+            <img src="" alt="img">
             <h2></h2>
             <p class="kort_beskrivelse"></p>
 
@@ -75,17 +75,15 @@
 
             planter.feed.entry.forEach((plante) => {
 
-                if (filter == "alle" || filter == ret.gsx$kategori.$t) {
+                if (filter == "alle" || filter == plante.gsx$kategori.$t) {
 
 
                     const klon = template.cloneNode(true).content;
 
-                    klon.querySelector("img").src = `imgs/small/${ret.gsx$billede.$t}-sm.jpg`;
-                    klon.querySelector("article h2").textContent = ` ${ret.gsx$navn.$t}`;
-                    klon.querySelector("article .kort_beskrivelse").textContent = ` ${ret.gsx$kort.$t}`;
-                    klon.querySelector("article .pris").textContent = `Pris: ${ret.gsx$pris.$t} kr`;
+                    klon.querySelector("img").src = `imgs/${plante.gsx$billede.$t}-sm.jpg`;
+                    klon.querySelector("article h2").textContent = ` ${plante.gsx$navn.$t}`;
+                    klon.querySelector("article .kort_beskrivelse").textContent = ` ${plante.gsx$navn.$t}`;
 
-                    klon.querySelector("article .nr").textContent = `Nr:  ${ret.gsx$id.$t}`;
 
                     listevisning.appendChild(klon);
                     listevisning.lastElementChild.addEventListener("click", () => {
