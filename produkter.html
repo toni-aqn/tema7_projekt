@@ -18,7 +18,7 @@
 
     <nav>
         <button class="filter valgt" data-kategori="alle">ALLE</button>
-        <button class="filter" data-favoritter="favoritter">FAVORITTER</button>
+        <button class="filter" data-favoritter="1">FAVORITTER</button>
         <button class="filter" data-kategori="indendoers">INDENDØRS</button>
         <button class="filter" data-kategori="udendoers">UDENDØRS</button>
         <button class="filter" data-kategori="potter">POTTER</button>
@@ -75,12 +75,12 @@
 
             planter.feed.entry.forEach((plante) => {
 
-                if (filter == "alle" || filter == plante.gsx$kategori.$t) {
+                if (filter == "alle" || filter == plante.gsx$kategori.$t || filter == plante.gsx$favoritter.$t) {
 
 
                     const klon = template.cloneNode(true).content;
 
-                    klon.querySelector("img").src = `imgs/${plante.gsx$billede.$t}-sm.jpg`;
+                    klon.querySelector("img").src = `imgs/${plante.gsx$billede.$t}.jpg`;
                     klon.querySelector("article h2").textContent = ` ${plante.gsx$navn.$t}`;
                     klon.querySelector("article .kort_beskrivelse").textContent = ` ${plante.gsx$navn.$t}`;
 
@@ -102,16 +102,33 @@
         }
 
         function filtrering() {
-            filter = this.dataset.kategori;
-            document.querySelector("h2").textContent = this.textContent;
-            document.querySelectorAll(".filter").forEach(elm => {
-                elm.classList.remove("valgt");
-                console.log(`${filter}`);
-            });
 
-            this.classList.add("valgt");
+            if (this.dataset.kategori) {
+                filter = this.dataset.kategori;
 
-            informationer();
+                document.querySelector("h2").textContent = this.textContent;
+                document.querySelectorAll(".filter").forEach(elm => {
+                    elm.classList.remove("valgt");
+                    console.log(`${filter}`);
+                });
+
+                this.classList.add("valgt");
+
+                informationer();
+            } else if (this.dataset.favoritter) {
+                filter = this.dataset.favoritter;
+
+                document.querySelector("h2").textContent = this.textContent;
+                document.querySelectorAll(".filter").forEach(elm => {
+                    elm.classList.remove("valgt");
+                    console.log(`${filter}`);
+                });
+
+                this.classList.add("valgt");
+
+                informationer();
+            }
+
         }
     </script>
 
