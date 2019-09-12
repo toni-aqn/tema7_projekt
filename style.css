@@ -101,53 +101,17 @@ li a {
 
 /* Change the link color on hover */
 li a:hover {
-    color: ;
+    color: #3b3b3b;
 }
 
 .active {
-    color: ;
+    color: #3b3b3b;
 }
 
-/************BURGER MENU - desktop*******/
-
-@media only screen and (max-width: 600px) {
-
-    .hidden {
-        transform: translateY(-100%);
-        opacity: 0;
-
-    }
-
-    #menuknap {
-        display: inline-block;
-        top: 10px;
-        right: 10px;
-        position: absolute;
-        z-index: 2;
-        font-family: 'helvetica';
-        font-size: 8vw;
-    }
-
-    #menu {
-        list-style-type: none;
-        transition: transform .3s;
-        transform-origin: top left;
-        background: rgba(103, 114, 77, 0.74);
-        z-index: 1;
-        padding: 150px;
-        padding-bottom: 100%;
-        margin-top: -10px;
-        margin-right: -10px;
-        font-size: 20px;
-
-    }
-
-    #menu li {
-        padding-top: 30px;
-    }
-
+nav img {
+    width: 30px;
+    height: 30px;
 }
-
 
 /************   2. STARTSIDE  **************/
 
@@ -189,6 +153,7 @@ h1 {
     margin-top: 0px;
     z-index: 80;
     margin-bottom: 50px;
+    margin-top: -150px;
 }
 
 .logo {
@@ -199,29 +164,6 @@ h1 {
 
 
 
-
-/********SPLASH - desktop*******/
-
-@media (orientation: landscape) {
-    #splash {
-        width: 100vw;
-        height: 56.25vw;
-        background-position: 0% 0%;
-        margin-top: 0vw;
-    }
-}
-
-@media only screen and (min-width: 1000px) {
-    .logo {
-        padding-top: 20px;
-        margin-bottom: -80px;
-    }
-
-    .vis_produkter {
-        font-size: 40px;
-        padding: 20px 40px;
-    }
-}
 
 /************   3. PRODUKTER **************/
 
@@ -289,18 +231,7 @@ article h2 {
 }
 
 
-@media screen and (min-width: 1000px) {
 
-    .filter {
-        display: flex;
-        flex-direction: row;
-    }
-
-    button {
-        width: 200px;
-
-    }
-}
 
 
 
@@ -348,14 +279,14 @@ button {
 
 
 #om {
-    margin-top: -10px;
+    margin-top: -150px;
 }
 
 
 /************   6.  KONTAKT    **************/
 
 #kontakt {
-    margin-top: -110px;
+    margin-top: -140px;
 }
 
 #kontakt h1 {
@@ -425,4 +356,112 @@ button {
         margin-bottom: 20px;
     }
 
+}
+
+/************BURGER MENU - desktop*******/
+
+@media only screen and (min-width: 600px) {
+
+    #menuknap {
+        display: none;
+
+    }
+
+    #menu.hidden {
+        transform: translateX(0);
+        opacity: 1;
+        width: 600px;
+
+    }
+
+    #menu li {
+        display: inline-block;
+        margin-right: 10px;
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .hidden {
+        transform: translateY(-100%);
+        opacity: 0;
+
+    }
+
+    #menuknap {
+        display: inline-block;
+        top: 10px;
+        right: 10px;
+        position: absolute;
+        z-index: 2;
+        font-family: 'helvetica';
+        font-size: 8vw;
+    }
+
+    #menu {
+        list-style-type: none;
+        transition: transform .3s;
+        transform-origin: top left;
+        background: rgba(103, 114, 77, 0.74);
+        z-index: 1;
+        padding: 150px;
+        padding-bottom: 100%;
+        margin-top: -10px;
+        margin-right: -10px;
+        font-size: 20px;
+
+    }
+
+    #menu li {
+        width: 160px;
+        margin-top: 10px;
+    }
+
+}
+
+
+/********SPLASH - desktop*******/
+
+@media (orientation: landscape) {
+    #splash {
+        width: 100vw;
+        height: 56.25vw;
+        background-position: 0% 0%;
+        margin-top: 0vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .logo {
+        padding-top: 20px;
+        margin-bottom: -80px;
+    }
+
+    .vis_produkter {
+        font-size: 40px;
+        padding: 20px 40px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .filter {
+        display: flex;
+        flex-direction: row;
+    }
+
+    button {
+        width: 200px;
+
+    }
+
+    .header_logo {
+        width: 250px;
+        height: auto;
+        right: 5px;
+        z-index: 500;
+        display: flex;
+        margin-top: 20px;
+    }
 }
