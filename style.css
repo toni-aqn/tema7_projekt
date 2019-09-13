@@ -106,16 +106,25 @@ li a {
 
 li:last-child {
     display: flex;
+    flex-wrap: wrap;
 }
+
 
 li img {
     width: 40px;
     height: 40px;
+    flex-basis: 50px;
+    flex-grow: 1;
 }
 
 li div {
     padding: 13px 6px;
+    flex-basis: 50px;
+    flex-grow: 1;
+
 }
+
+
 
 /* Change the link color on hover */
 li a:hover {
@@ -230,14 +239,11 @@ button {
     overflow: hidden;
     max-height: 340px;
     max-width: 350px;
+    cursor: pointer;
 }
 
 article {
     padding: 10px;
-}
-
-article img {
-    cursor: pointer;
 }
 
 article p,
@@ -404,50 +410,6 @@ article.plante {
 
 /************BURGER MENU - desktop*******/
 
-@media only screen and (min-width: 700px) {
-
-    header {
-        height: 100px;
-        background-color: #6A7550;
-    }
-
-    li a {
-        padding: 20px;
-    }
-
-    ul {
-        width: 700px;
-    }
-
-
-    li {
-        display: inline-block;
-    }
-
-    #menuknap {
-        display: none;
-
-    }
-
-    #menu.hidden {
-        transform: translateX(0);
-        opacity: 1;
-        width: 600px;
-
-    }
-
-    .header_logo {
-        display: inherit;
-        width: 250px;
-        height: auto;
-        right: 5px;
-        z-index: 500;
-        display: flex;
-        margin-top: 20px;
-    }
-
-}
-
 @media only screen and (max-width: 700px) {
 
     .hidden {
@@ -472,7 +434,7 @@ article.plante {
         transform-origin: top left;
         background: rgba(103, 114, 77, 0.74);
         z-index: 1;
-        padding: 150px;
+        padding: 120px;
         padding-bottom: 100%;
         margin-top: -10px;
         margin-right: -10px;
@@ -481,10 +443,72 @@ article.plante {
     }
 
     #menu li {
-        width: 160px;
+        width: 280px;
         margin-top: 10px;
     }
 
+}
+
+@media only screen and (min-width: 700px) {
+
+    header {
+        height: 100px;
+        background-color: #6A7550;
+    }
+
+    li a {
+        padding: 15px;
+    }
+
+    li {
+        display: inline-block;
+        font-size: 0.7rem;
+    }
+
+    li:last-child {
+        padding: 7px;
+
+    }
+
+    #menuknap {
+        display: none;
+
+    }
+
+    #menu.hidden {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    #menu {
+        display: flex;
+        margin: 50px 10px;
+    }
+
+    .header_logo {
+        display: inherit;
+        width: 250px;
+        height: auto;
+        right: 5px;
+        z-index: 500;
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .logo_burgermenu {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) {
+    li {
+        font-size: 1rem;
+    }
+
+    li:last-child {
+        padding: 3px;
+    }
 }
 
 
