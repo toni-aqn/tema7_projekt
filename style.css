@@ -106,7 +106,15 @@ li a {
 
 li:last-child {
     display: flex;
+}
 
+li img {
+    width: 40px;
+    height: 40px;
+}
+
+li div {
+    padding: 13px 6px;
 }
 
 /* Change the link color on hover */
@@ -331,10 +339,7 @@ button {
         max-width: 1100px;
     }
 
-    header {
-        height: 100px;
-        background-color: #6A7550;
-    }
+
 
     .filter {
         max-width: 1100px;
@@ -380,6 +385,24 @@ button {
 
 @media only screen and (min-width: 600px) {
 
+    header {
+        height: 100px;
+        background-color: #6A7550;
+    }
+
+    li a {
+        padding: 20px;
+    }
+
+    ul {
+        width: 700px;
+    }
+
+
+    li {
+        display: inline-block;
+    }
+
     #menuknap {
         display: none;
 
@@ -392,14 +415,9 @@ button {
 
     }
 
-    #menu li {
-        display: inline-block;
-        margin-right: 10px;
-        margin-top: 15px;
-    }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 700px) {
 
     .hidden {
         transform: translateY(-100%);
