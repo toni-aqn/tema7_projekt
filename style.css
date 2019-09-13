@@ -230,14 +230,11 @@ button {
     overflow: hidden;
     max-height: 340px;
     max-width: 350px;
+    cursor: pointer;
 }
 
 article {
     padding: 10px;
-}
-
-article img {
-    cursor: pointer;
 }
 
 article p,
