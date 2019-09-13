@@ -106,16 +106,25 @@ li a {
 
 li:last-child {
     display: flex;
+    flex-wrap: wrap;
 }
+
 
 li img {
     width: 40px;
     height: 40px;
+    flex-basis: 50px;
+    flex-grow: 1;
 }
 
 li div {
     padding: 13px 6px;
+    flex-basis: 50px;
+    flex-grow: 1;
+
 }
+
+
 
 /* Change the link color on hover */
 li a:hover {
@@ -166,7 +175,6 @@ h1 {
     margin-top: 0px;
     z-index: 80;
     margin-bottom: 50px;
-    margin-top: -150px;
 }
 
 .logo {
@@ -283,7 +291,7 @@ article.plante {
 
 .forhold {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 20px;
 }
 
@@ -401,50 +409,6 @@ article.plante {
 
 /************BURGER MENU - desktop*******/
 
-@media only screen and (min-width: 700px) {
-
-    header {
-        height: 100px;
-        background-color: #6A7550;
-    }
-
-    li a {
-        padding: 20px;
-    }
-
-    ul {
-        width: 700px;
-    }
-
-
-    li {
-        display: inline-block;
-    }
-
-    #menuknap {
-        display: none;
-
-    }
-
-    #menu.hidden {
-        transform: translateX(0);
-        opacity: 1;
-        width: 600px;
-
-    }
-
-    .header_logo {
-        display: inherit;
-        width: 250px;
-        height: auto;
-        right: 5px;
-        z-index: 500;
-        display: flex;
-        margin-top: 20px;
-    }
-
-}
-
 @media only screen and (max-width: 700px) {
 
     .hidden {
@@ -469,7 +433,7 @@ article.plante {
         transform-origin: top left;
         background: rgba(103, 114, 77, 0.74);
         z-index: 1;
-        padding: 150px;
+        padding: 120px;
         padding-bottom: 100%;
         margin-top: -10px;
         margin-right: -10px;
@@ -478,10 +442,72 @@ article.plante {
     }
 
     #menu li {
-        width: 160px;
+        width: 180px;
         margin-top: 10px;
     }
 
+}
+
+@media only screen and (min-width: 700px) {
+
+    header {
+        height: 100px;
+        background-color: #6A7550;
+    }
+
+    li a {
+        padding: 15px;
+    }
+
+    li {
+        display: inline-block;
+        font-size: 0.7rem;
+    }
+
+    li:last-child {
+        padding: 7px;
+
+    }
+
+    #menuknap {
+        display: none;
+
+    }
+
+    #menu.hidden {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    #menu {
+        display: flex;
+        margin: 50px 10px;
+    }
+
+    .header_logo {
+        display: inherit;
+        width: 250px;
+        height: auto;
+        right: 5px;
+        z-index: 500;
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .logo_burgermenu {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) {
+    li {
+        font-size: 1rem;
+    }
+
+    li:last-child {
+        padding: 3px;
+    }
 }
 
 
@@ -521,6 +547,48 @@ article.plante {
         text-align: center;
         margin-left: 10px;
         margin-right: 10px;
+    }
+
+
+}
+
+
+/**** ENKELT SIDE DEKSTOP ****/
+
+@media screen and (min-width: 1000px) {
+    .enkelt_side {
+        display: flex;
+    }
+
+    .enkelt_side .txt,
+    .enkelt_side .plante {
+        width: 50vw;
+    }
+
+    .enkelt_side p {
+        font-size: 13px;
+    }
+
+    .enkelt_side .txt {
+        margin: 30px;
+    }
+
+    .forhold img {
+        width: 50px;
+    }
+
+    .i_kurv {
+        margin-left: 25vw;
+    }
+
+    .txt .pris {
+        font-size: 25px;
+        padding-top: 20px;
+    }
+
+    .forhold {
+        text-align: center;
+        margin-right: 15vw;
     }
 
 
