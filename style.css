@@ -226,9 +226,18 @@ button {
     padding: 10px;
 }
 
+.billed_ramme {
+    overflow: hidden;
+    max-height: 340px;
+    max-width: 350px;
+}
 
 article {
     padding: 10px;
+}
+
+article img {
+    cursor: pointer;
 }
 
 article p,
