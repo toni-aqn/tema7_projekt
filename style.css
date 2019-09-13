@@ -285,8 +285,8 @@ button {
 
 /************   6.  KONTAKT    **************/
 
-#kontakt {
-    margin-top: -140px;
+.header_logo {
+    display: none;
 }
 
 #kontakt h1 {
@@ -295,14 +295,16 @@ button {
 
 .sm_ikoner {
     display: flex;
-    height: 20vw;
-    width: 20vw;
-    margin-left: 50vw;
+    height: ;
+    width: 100vw;
+    justify-content: flex-end
 }
 
 .sm_ikoner img {
-    margin-right: 20px;
+    width: 60px;
+    margin: 20px 60px 20px 2px;
 }
+
 
 
 /************   7. MEDIA  Q  **************/
@@ -341,7 +343,6 @@ button {
     #kontakt,
     #om {
         display: flex;
-        flex-direction: row;
         margin: 0px;
         margin-bottom: -20px;
     }
