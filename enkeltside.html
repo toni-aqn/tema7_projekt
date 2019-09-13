@@ -18,15 +18,29 @@
 
     <div class="popup">
         <article class="plante">
-            <button class="luk">Tilbage</button>
-            <img src="" alt="billede">
+            <div>
+                <img class="tilbage_ikon" src="ikoner/tilbage_pil.png" alt="tilbage">
+                <button class="luk">Tilbage</button>
+            </div>
+
+            <img class="plante_img" src="" alt="billede">
             <h2>produkt navn</h2>
             <p class="beskrivelse"></p>
             <p class="pris"></p>
+
             <div class="forhold">
-                <div class="forhold1">højde</div>
-                <div class="forhold2">vand</div>
-                <div class="forhold3">sol</div>
+                <div class="hoejde">
+                    <img src="ikoner/hoejde_ikon.png" alt="hoejde">
+                    <p class="hoejde_tekst"></p>
+                </div>
+                <div class="vand">
+                    <img src="ikoner/vand_ikon.png" alt="vand">
+                    <p class="vand_tekst"></p>
+                </div>
+                <div class="sol">
+                    <img src="ikoner/sol_ikon.png" alt="sol">
+                    <p class="sol_tekst"></p>
+                </div>
             </div>
             <div class="i_kurv">LÆG I KURV</div>
         </article>
@@ -62,17 +76,19 @@
         function informationer() {
             planter.feed.entry.forEach((plante) => {
                 if (plante.gsx$id.$t == nr) {
-                    document.querySelector(".popup img").src = `imgs/${plante.gsx$billede.$t}.jpg `;
+
+                    document.querySelector(".plante_img").src = `imgs/${plante.gsx$billede.$t}.jpg `;
                     document.querySelector(".popup h2").textContent = plante.gsx$navn.$t;
                     document.querySelector(".beskrivelse").textContent = plante.gsx$beskrivelse.$t;
+                    document.querySelector(".pris").textContent = `PRIS ${plante.gsx$pris.$t} kr`;
+                    document.querySelector(".hoejde_tekst").textContent = `${plante.gsx$hoejde.$t}`;
+                    document.querySelector(".vand_tekst").textContent = plante.gsx$vand.$t;
+                    document.querySelector(".sol_tekst").textContent = plante.gsx$sol.$t;
 
-                    document.querySelector(".popup .pris").textContent = `PRIS ${plante.gsx$pris.$t} kr`;
-
-                    document.querySelector(".popup .forhold1").textContent = plante.gsx$højde.$t;
-
-                    document.querySelector(".popup .forhold1").textContent = plante.gsx$højde.$t;
-
-                    document.querySelector(".popup .forhold1").textContent = plante.gsx$højde.$t;
+                    if (plante.gsx$kategori.$t == "potter") {
+                        console.log("det er ikke en plante");
+                        document.querySelector(".forhold").style.display = "none";
+                    }
 
                 }
             });
@@ -89,5 +105,8 @@
             });
 
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
