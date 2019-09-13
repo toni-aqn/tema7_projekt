@@ -18,19 +18,34 @@
 
     <div class="popup">
         <article class="plante">
-            <button class="luk">Tilbage</button>
-            <img src="" alt="billede">
+            <div>
+                <img class="tilbage_ikon" src="ikoner/tilbage_pil.png" alt="tilbage">
+                <button class="luk">Tilbage</button>
+            </div>
+
+            <img class="plante_img" src="" alt="billede">
             <h2>produkt navn</h2>
-            <p class="lang_beskrivelse"></p>
-            <p class="pris">2200,-</p>
+            <p class="beskrivelse"></p>
+            <p class="pris"></p>
+
             <div class="forhold">
-                <div class="forhold1">forhold</div>
-                <div class="forhold2">forhold</div>
-                <div class="forhold3">forhold</div>
+                <div class="hoejde">
+                    <img src="ikoner/hoejde_ikon.png" alt="hoejde">
+                    <p class="hoejde_tekst"></p>
+                </div>
+                <div class="vand">
+                    <img src="ikoner/vand_ikon.png" alt="vand">
+                    <p class="vand_tekst"></p>
+                </div>
+                <div class="sol">
+                    <img src="ikoner/sol_ikon.png" alt="sol">
+                    <p class="sol_tekst"></p>
+                </div>
             </div>
             <div class="i_kurv">LÆG I KURV</div>
         </article>
     </div>
+
     <footer>
         <p class="footer1">FIGNESTRÆDE 22</p>
         <p class="footer2">1234 KØBENHAVN K</p>
@@ -49,7 +64,7 @@
         async function hentjson() {
             console.log("hentjson");
 
-            let myRawjson = await fetch("https://spreadsheets.google.com/feeds/list/17Dd7DvkPaFamNUdUKlrFgnH6POvBJXac7qyiS6zNRw0/od6/public/values?alt=json");
+            let myRawjson = await fetch("https://spreadsheets.google.com/feeds/list/1pUeq7DL83r8HprlFhAdWsyy4jInr6mneRbFrKSbq2fY/od6/public/values?alt=json");
 
             planter = await myRawjson.json();
             //  console.log(myjson);
@@ -60,20 +75,38 @@
 
         function informationer() {
             planter.feed.entry.forEach((plante) => {
-                if (ret.gsx$id.$t == nr) {
-                    document.querySelector(".popup img").src = `imgs/small/${ret.gsx$billede.$t}-sm.jpg `;
-                    document.querySelector(".popup h2").textContent = ret.gsx$navn.$t;
-                    document.querySelector(".lang_beskrivelse").textContent = ret.gsx$lang.$t;
-                    document.querySelector(".popup .nr").textContent = `Nr:  ${ret.gsx$id.$t}`;
-                    document.querySelector(".popup .pris").textContent = `Pris: ${ret.gsx$pris.$t} kr`;
+                if (plante.gsx$id.$t == nr) {
+
+                    document.querySelector(".plante_img").src = `imgs/${plante.gsx$billede.$t}.jpg `;
+                    document.querySelector(".popup h2").textContent = plante.gsx$navn.$t;
+                    document.querySelector(".beskrivelse").textContent = plante.gsx$beskrivelse.$t;
+                    document.querySelector(".pris").textContent = `PRIS ${plante.gsx$pris.$t} kr`;
+                    document.querySelector(".hoejde_tekst").textContent = `${plante.gsx$hoejde.$t}`;
+                    document.querySelector(".vand_tekst").textContent = plante.gsx$vand.$t;
+                    document.querySelector(".sol_tekst").textContent = plante.gsx$sol.$t;
+
+                    if (plante.gsx$kategori.$t == "potter") {
+                        console.log("det er ikke en plante");
+                        document.querySelector(".forhold").style.display = "none";
+                    }
 
                 }
             });
+
+            /*
+            img
+            h2
+            p beskrivelse
+            p pris
+            */
 
             document.querySelector(".luk").addEventListener("click", () => {
                 history.back();
             });
 
         }
+
     </script>
-</body></html>
+</body>
+
+</html>

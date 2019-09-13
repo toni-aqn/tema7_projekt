@@ -10,23 +10,29 @@
 </head>
 
 <body>
+    <header>
+        <div class="header_logo"><img src="logo/planteguru_white_logo_transparent_tyk.png" alt="logo"></div>
+
+        <nav class="burgermenu">
+            <div id="menuknap">☰</div>
+            <ul id="menu" class="hidden">
+                <li><a href="startside.html">STARTSIDE</a></li>
+                <li><a href="produkter.html">PRODUKTER</a></li>
+                <li><a href="om.html">OM</a></li>
+                <li><a href="kontakt.html">KONTAKT</a></li>
+                <li>
+                    <div>MIN KURV</div>
+                    <img src="/ikoner/basket_white_transparent.png" alt="kurv">
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
 
     <h2 class="filterTekst">ALLE</h2>
 
-
     <nav class="filter">
-        <header>
-            <nav>
-                <div id="menuknap">☰</div>
-                <ul id="menu" class="hidden">
-                    <li><a href="startside.html">STARTSIDE</a></li>
-                    <li><a href="produkter.html">PRODUKTER</a></li>
-                    <li><a href="om.html">OM</a></li>
-                    <li><a href="kontakt.html">KONTAKT</a></li>
-                </ul>
-
-            </nav>
-        </header>
         <button class="filter valgt" data-kategori="alle">ALLE</button>
         <button class="filter" data-favoritter="1">FAVORITTER</button>
         <button class="filter" data-kategori="indendoers">INDENDØRS</button>
@@ -54,6 +60,7 @@
     </footer>
 
 
+    <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", hentjson);
 
@@ -96,7 +103,7 @@
 
                     listevisning.appendChild(klon);
                     listevisning.lastElementChild.addEventListener("click", () => {
-                        location.href = `enkeltside.html?nr=${ret.gsx$id.$t}`;
+                        location.href = `enkeltside.html?nr=${plante.gsx$id.$t}`;
                     });
 
                 }

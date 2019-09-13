@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <nav>
+        <nav class="burgermenu">
             <div id="menuknap">☰</div>
             <ul id="menu" class="hidden">
                 <li><a href="startside.html">STARTSIDE</a></li>
@@ -36,6 +36,18 @@
 
     <h1 class="filterTekst">FAVORITTER</h1>
 
+    <section class="data_container"></section>
+
+    <template>
+        <article>
+            <img src="" alt="img">
+            <h2></h2>
+            <p class="kort_beskrivelse"></p>
+
+        </article>
+    </template>
+
+
     <footer>
         <p>FIGNESTRÆDE 12</p>
         <p>1234 KØBENHAVN K</p>
@@ -43,9 +55,58 @@
         <p>PLANTEGURU@MAIL.COM</p>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", hentjson);
+
+        let planter;
+        let filter = "alle";
+
+        const listevisning = document.querySelector(".data_container");
+        const template = document.querySelector("template");
+
+        async function hentjson() {
+            console.log("hentjson");
+
+            let myRawjson = await fetch("https://spreadsheets.google.com/feeds/list/1pUeq7DL83r8HprlFhAdWsyy4jInr6mneRbFrKSbq2fY/od6/public/values?alt=json");
+
+            planter = await myRawjson.json();
+            //  console.log(myjson);
+
+            informationer();
+
+        }
+
+        function informationer() {
+            console.log("køre");
+
+            listevisning.innerHTML = "";
+
+
+            planter.feed.entry.forEach((plante) => {
+
+                if (plante.gsx$favoritter.$t) {
+
+
+                    const klon = template.cloneNode(true).content;
+
+                    klon.querySelector("img").src = `imgs/${plante.gsx$billede.$t}.jpg`;
+                    klon.querySelector("article h2").textContent = ` ${plante.gsx$navn.$t}`;
+                    klon.querySelector("article .kort_beskrivelse").textContent = ` ${plante.gsx$kort.$t}`;
+
+
+                    listevisning.appendChild(klon);
+                    listevisning.lastElementChild.addEventListener("click", () => {
+                        location.href = `enkeltside.html?nr=${plante.gsx$id.$t}`;
+                    });
+
+                }
+
+            });
+        }
+
+    </script>
+
     <script src="script.js"></script>
-
-
 </body>
 
 </html>

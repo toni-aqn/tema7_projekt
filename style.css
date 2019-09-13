@@ -76,27 +76,37 @@ body {
 /********MENU - desktop*********/
 
 
+
+.header_logo {
+    display: none;
+}
+
 a {
     text-decoration: none;
 }
 
-nav {
+.burgermenu {
     color: white;
-    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
     position: absolute;
     top: 0px;
     right: 0px;
+    z-index: 500;
 }
 
 li a {
-    display: block;
     color: white;
+    line-height: 50px;
     padding-bottom: 20px;
     font-family: 'helvetica';
     text-align: left;
+}
+
+li:last-child {
+    display: flex;
+
 }
 
 /* Change the link color on hover */
@@ -108,16 +118,14 @@ li a:hover {
     color: #3b3b3b;
 }
 
-nav img {
+/*nav img {
     width: 30px;
     height: 30px;
-}
+}*/
 
 /************   2. STARTSIDE  **************/
 
-header {
-    margin-top: -20px;
-}
+
 
 .vis_produkter {
     border: solid 2px white;
@@ -169,16 +177,19 @@ h1 {
 
 .filterTekst {
     font-size: 2rem;
+    margin-top: 80px;
 }
 
 
 .filter {
     display: flex;
     flex-direction: column;
-    margin: 5px auto;
+    margin: 5px;
     padding: 10px;
     position: relative;
     font-family: 'helvetica';
+
+
 }
 
 button {
@@ -188,6 +199,7 @@ button {
     height: 45px;
     font-size: 16px;
     color: #3B3B3B;
+    cursor: pointer;
 }
 
 
@@ -234,7 +246,6 @@ article h2 {
 
 
 
-
 /************ 4.  ENKELT SIDE  **************/
 
 
@@ -244,6 +255,7 @@ article h2 {
     text-align: center;
 
 }
+
 
 .luk {
     position: fixed;
@@ -278,16 +290,10 @@ button {
 /************   5.  OM      **************/
 
 
-#om {
-    margin-top: -150px;
-}
-
 
 /************   6.  KONTAKT    **************/
 
-#kontakt {
-    margin-top: -140px;
-}
+
 
 #kontakt h1 {
     margin-bottom: 40px;
@@ -295,14 +301,15 @@ button {
 
 .sm_ikoner {
     display: flex;
-    height: 20vw;
-    width: 20vw;
-    margin-left: 50vw;
+    width: 100%;
+    justify-content: flex-end;
 }
 
 .sm_ikoner img {
-    margin-right: 20px;
+    width: 60px;
+    margin: 20px 60px 20px 2px;
 }
+
 
 
 /************   7. MEDIA  Q  **************/
@@ -338,17 +345,21 @@ button {
 
 @media screen and (min-width: 1000px) {
 
+
     #kontakt,
     #om {
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap;
         margin: 0px;
         margin-bottom: -20px;
+        flex-direction: row;
     }
 
     #kontakt .txt,
     #om .txt {
-        margin: 100px;
+        flex-basis: 400px;
+        flex-grow: 1;
+        padding: 0px 50px;
     }
 
     #kontakt h2,
@@ -356,7 +367,14 @@ button {
         margin-bottom: 20px;
     }
 
+    #kontakt .billede,
+    #om .billede {
+        flex-basis: 400px;
+        flex-grow: 1;
+    }
+
 }
+
 
 /************BURGER MENU - desktop*******/
 
@@ -385,8 +403,8 @@ button {
 
     .hidden {
         transform: translateY(-100%);
-        opacity: 0;
-
+        /*        opacity: 0;*/
+        display: none;
     }
 
     #menuknap {
@@ -457,6 +475,7 @@ button {
     }
 
     .header_logo {
+        display: inherit;
         width: 250px;
         height: auto;
         right: 5px;
