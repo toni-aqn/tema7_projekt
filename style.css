@@ -93,13 +93,20 @@ a {
     position: absolute;
     top: 0px;
     right: 0px;
+    z-index: 500;
 }
 
 li a {
     color: white;
+    line-height: 50px;
     padding-bottom: 20px;
     font-family: 'helvetica';
     text-align: left;
+}
+
+li:last-child {
+    display: flex;
+
 }
 
 /* Change the link color on hover */
@@ -192,11 +199,8 @@ button {
     height: 45px;
     font-size: 16px;
     color: #3B3B3B;
-<<<<<<< HEAD
-
-=======
-    cursor: pointer;
->>>>>>> origin/master
+    <<<<<<< HEAD=======cursor: pointer;
+    > > > > > > > origin/master
 }
 
 
