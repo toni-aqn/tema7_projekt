@@ -188,6 +188,7 @@ button {
     height: 45px;
     font-size: 16px;
     color: #3B3B3B;
+    cursor: pointer;
 }
 
 
