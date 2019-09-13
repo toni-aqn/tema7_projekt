@@ -12,15 +12,29 @@
 <body>
 
     <header>
-        <h1 class="logo"></h1>
+        <div class="header_logo"><img src="logo/planteguru_white_logo_transparent_tyk.png" alt="logo"></div>
+
+        <nav class="burgermenu">
+            <div id="menuknap">☰</div>
+            <ul id="menu" class="hidden">
+                <li><a href="startside.html">STARTSIDE</a></li>
+                <li><a href="produkter.html">PRODUKTER</a></li>
+                <li><a href="om.html">OM</a></li>
+                <li><a href="kontakt.html">KONTAKT</a></li>
+                <li>
+                    <div>MIN KURV</div>
+                    <img src="/ikoner/basket_white_transparent.png" alt="kurv">
+                </li>
+            </ul>
+
+        </nav>
     </header>
 
 
-    <div class="popup">
+    <div class="enkelt_side">
         <article class="plante">
-            <div>
+            <div class="luk">
                 <img class="tilbage_ikon" src="ikoner/tilbage_pil.png" alt="tilbage">
-                <button class="luk">Tilbage</button>
             </div>
 
             <img class="plante_img" src="" alt="billede">
@@ -78,7 +92,7 @@
                 if (plante.gsx$id.$t == nr) {
 
                     document.querySelector(".plante_img").src = `imgs/${plante.gsx$billede.$t}.jpg `;
-                    document.querySelector(".popup h2").textContent = plante.gsx$navn.$t;
+                    document.querySelector(".enkelt_side h2").textContent = plante.gsx$navn.$t;
                     document.querySelector(".beskrivelse").textContent = plante.gsx$beskrivelse.$t;
                     document.querySelector(".pris").textContent = `PRIS ${plante.gsx$pris.$t} kr`;
                     document.querySelector(".hoejde_tekst").textContent = `${plante.gsx$hoejde.$t}`;
