@@ -11,8 +11,8 @@
 
 @font-face {
     font-family: 'helvetica';
-    src: url('fonts/HelveticaNeueLTStd-MdCn.woff2') format('woff2'),
-        url('fonts/HelveticaNeueLTStd-MdCn.woff') format('woff');
+    src: url('fonts/helveticaneue-roman.woff2') format('woff2'),
+        url('fonts/helveticaneue-roman.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
