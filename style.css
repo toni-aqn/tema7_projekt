@@ -126,10 +126,7 @@ li a:hover {
     color: #3b3b3b;
 }
 
-/*nav img {
-    width: 30px;
-    height: 30px;
-}*/
+
 
 /************   2. STARTSIDE  **************/
 
@@ -189,14 +186,14 @@ h1 {
 }
 
 
-.filter {
+.filter_knapper {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin: 5px;
     padding: 10px;
     position: relative;
     font-family: 'helvetica';
-
 
 }
 
@@ -208,6 +205,8 @@ button {
     font-size: 16px;
     color: #3B3B3B;
     cursor: pointer;
+    text-align: center;
+    margin-top: 5px;
 }
 
 
@@ -341,8 +340,13 @@ button {
 
 
 
-    .filter {
+    .filter_knapper {
         max-width: 1100px;
+        text-align: center;
+    }
+
+    button {
+        text-align: center;
     }
 
 }
@@ -480,16 +484,19 @@ button {
     }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 700px) {
 
-    .filter {
+    .filter_knapper {
         display: flex;
         flex-direction: row;
+        margin: auto;
     }
 
     button {
         width: 200px;
-
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .header_logo {
