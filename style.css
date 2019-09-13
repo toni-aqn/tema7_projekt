@@ -286,7 +286,7 @@ article.plante {
 
 .forhold {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 20px;
 }
 
@@ -524,6 +524,48 @@ article.plante {
         text-align: center;
         margin-left: 10px;
         margin-right: 10px;
+    }
+
+
+}
+
+
+/**** ENKELT SIDE DEKSTOP ****/
+
+@media screen and (min-width: 1000px) {
+    .enkelt_side {
+        display: flex;
+    }
+
+    .enkelt_side .txt,
+    .enkelt_side .plante {
+        width: 50vw;
+    }
+
+    .enkelt_side p {
+        font-size: 13px;
+    }
+
+    .enkelt_side .txt {
+        margin: 30px;
+    }
+
+    .forhold img {
+        width: 50px;
+    }
+
+    .i_kurv {
+        margin-left: 25vw;
+    }
+
+    .txt .pris {
+        font-size: 25px;
+        padding-top: 20px;
+    }
+
+    .forhold {
+        text-align: center;
+        margin-right: 15vw;
     }
 
 
