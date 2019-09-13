@@ -226,9 +226,18 @@ button {
     padding: 10px;
 }
 
+.billed_ramme {
+    overflow: hidden;
+    max-height: 340px;
+    max-width: 350px;
+}
 
 article {
     padding: 10px;
+}
+
+article img {
+    cursor: pointer;
 }
 
 article p,
@@ -395,7 +404,7 @@ article.plante {
 
 /************BURGER MENU - desktop*******/
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
 
     header {
         height: 100px;
@@ -425,6 +434,16 @@ article.plante {
         opacity: 1;
         width: 600px;
 
+    }
+
+    .header_logo {
+        display: inherit;
+        width: 250px;
+        height: auto;
+        right: 5px;
+        z-index: 500;
+        display: flex;
+        margin-top: 20px;
     }
 
 }
@@ -507,13 +526,5 @@ article.plante {
         margin-right: 10px;
     }
 
-    .header_logo {
-        display: inherit;
-        width: 250px;
-        height: auto;
-        right: 5px;
-        z-index: 500;
-        display: flex;
-        margin-top: 20px;
-    }
+
 }
