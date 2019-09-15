@@ -452,6 +452,7 @@ article.plante {
 
     header {
         height: 100px;
+        margin: 0px;
         background-color: #6A7550;
     }
 
@@ -529,12 +530,12 @@ article.plante {
     }
 
     .vis_produkter {
-        font-size: 40px;
+        font-size: 35px;
         padding: 20px 40px;
     }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 640px) {
 
     .filter_knapper {
         display: flex;
@@ -549,6 +550,10 @@ article.plante {
         margin-right: 10px;
     }
 
+    .logo {
+        padding-top: 20px;
+        margin-bottom: -30px;
+    }
 
 }
 
@@ -591,5 +596,9 @@ article.plante {
         margin-right: 15vw;
     }
 
+    .tilbage_ikon {
+        top: 140px;
+        left: 20px;
+    }
 
 }
