@@ -20,6 +20,7 @@
 body {
     margin: 0;
     background-color: #E8E6E2;
+    font-family: 'helvetica';
 }
 
 h1 {
@@ -69,10 +70,6 @@ img {
     width: 100%;
 }
 
-body {
-    font-family: 'helvetica';
-}
-
 /********MENU - desktop*********/
 
 
@@ -104,7 +101,7 @@ li a {
     text-align: left;
 }
 
-li:last-child {
+li:nth-child(5) {
     display: flex;
     flex-wrap: wrap;
 }
@@ -113,14 +110,14 @@ li:last-child {
 li img {
     width: 40px;
     height: 40px;
-    flex-basis: 50px;
+    flex-basis: 10px;
     flex-grow: 1;
 }
 
 li div {
     padding: 13px 6px;
     flex-basis: 50px;
-    flex-grow: 1;
+    flex-grow: 3;
 
 }
 
@@ -354,60 +351,28 @@ article.plante {
     }
 }
 
-@media screen and (min-width: 1000px) {
-    .data_container {
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 1100px;
-    }
-
-
+@media screen and (min-width: 640px) {
 
     .filter_knapper {
-        max-width: 1100px;
-        text-align: center;
+        display: flex;
+        flex-direction: row;
+        margin: auto;
     }
 
     button {
+        width: 200px;
         text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .logo {
+        padding-top: 20px;
+        margin-bottom: -30px;
     }
 
 }
 
-
-@media screen and (min-width: 1000px) {
-
-
-    #kontakt,
-    #om {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0px;
-        margin-bottom: -20px;
-        flex-direction: row;
-    }
-
-    #kontakt .txt,
-    #om .txt {
-        flex-basis: 400px;
-        flex-grow: 1;
-        padding: 0px 50px;
-    }
-
-    #kontakt h2,
-    #om h2 {
-        margin-bottom: 20px;
-    }
-
-    #kontakt .billede,
-    #om .billede {
-        flex-basis: 400px;
-        flex-grow: 1;
-    }
-
-}
-
-
-/************BURGER MENU - desktop*******/
 
 @media only screen and (max-width: 700px) {
 
@@ -450,9 +415,11 @@ article.plante {
 
 @media only screen and (min-width: 700px) {
 
+    /*** media Q header og menu (min)700px ***/
+
     header {
         height: 100px;
-        margin: 0px;
+        margin: -20px 0px 0px 0px;
         background-color: #6A7550;
     }
 
@@ -465,7 +432,7 @@ article.plante {
         font-size: 0.7rem;
     }
 
-    li:last-child {
+    li:nth-child(5) {
         padding: 7px;
 
     }
@@ -482,7 +449,7 @@ article.plante {
 
     #menu {
         display: flex;
-        margin: 50px 10px;
+        margin: 30px 10px;
     }
 
     .header_logo {
@@ -499,31 +466,30 @@ article.plante {
         display: none;
     }
 
+    /*** media Q enkeltsiden (min)700px ***/
+
+
+    .tilbage_ikon {
+        top: 140px;
+        left: 20px;
+    }
+
 }
 
 @media only screen and (min-width: 1000px) {
+
+    /*** media Q header og menu (min)1000px ***/
+
     li {
         font-size: 1rem;
     }
 
-    li:last-child {
+    li:nth-child(5) {
         padding: 3px;
     }
-}
 
+    /*** media Q forside (min)1000px ***/
 
-/********SPLASH - desktop*******/
-
-@media (orientation: landscape) {
-    #splash {
-        width: 100vw;
-        height: 56.25vw;
-        background-position: 0% 0%;
-        margin-top: 0vw;
-    }
-}
-
-@media only screen and (min-width: 1000px) {
     .logo {
         padding-top: 20px;
         margin-bottom: -80px;
@@ -533,34 +499,9 @@ article.plante {
         font-size: 35px;
         padding: 20px 40px;
     }
-}
 
-@media screen and (min-width: 640px) {
+    /*** media Q enkeltsiden (min)1000px ***/
 
-    .filter_knapper {
-        display: flex;
-        flex-direction: row;
-        margin: auto;
-    }
-
-    button {
-        width: 200px;
-        text-align: center;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .logo {
-        padding-top: 20px;
-        margin-bottom: -30px;
-    }
-
-}
-
-
-/**** ENKELT SIDE DEKSTOP ****/
-
-@media screen and (min-width: 1000px) {
     .enkelt_side {
         display: flex;
     }
@@ -596,9 +537,62 @@ article.plante {
         margin-right: 15vw;
     }
 
-    .tilbage_ikon {
-        top: 140px;
-        left: 20px;
+    /*** Media Q produktsiden (min)1000px ***/
+
+    .data_container {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1100px;
     }
 
+
+
+    .filter_knapper {
+        max-width: 1100px;
+        text-align: center;
+    }
+
+    button {
+        text-align: center;
+    }
+
+    /*** Media Q kontakt og om (min)1000px ***/
+
+    #kontakt,
+    #om {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px;
+        margin-bottom: -20px;
+        flex-direction: row;
+    }
+
+    #kontakt .txt,
+    #om .txt {
+        flex-basis: 400px;
+        flex-grow: 1;
+        padding: 0px 50px;
+    }
+
+    #kontakt h2,
+    #om h2 {
+        margin-bottom: 20px;
+    }
+
+    #kontakt .billede,
+    #om .billede {
+        flex-basis: 400px;
+        flex-grow: 1;
+    }
+
+}
+
+/********SPLASH - desktop*******/
+
+@media (orientation: landscape) {
+    #splash {
+        width: 100vw;
+        height: 56.25vw;
+        background-position: 0% 0%;
+        margin-top: 0vw;
+    }
 }
