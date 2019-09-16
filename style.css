@@ -94,8 +94,6 @@ a {
 .burgermenu {
     color: #3B3B3B;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -136,7 +134,8 @@ li div {
 }
 
 .logo_burgermenu {
-    margin-top: 10vw;
+    margin: auto;
+    margin-top: 100px;
 }
 
 
@@ -253,9 +252,6 @@ button {
 
 .billed_ramme {
     overflow: hidden;
-    max-height: 340px;
-    max-width: 350px;
-
 }
 
 .billed_ramme img {
@@ -428,12 +424,10 @@ article.plante {
         background-image: url(billeder/burgermenu_baggrund.png);
         background-size: cover;
         z-index: 1;
-        padding: 120px;
-        padding-bottom: 100%;
+        padding: 110px;
         margin-top: -10px;
-        margin-right: -10px;
         font-size: 20px;
-
+        margin-bottom: -10xp;
     }
 
     #menu li {
@@ -545,6 +539,11 @@ article.plante {
     .vis_produkter {
         font-size: 35px;
         padding: 20px 40px;
+        transition: all .2s ease-in-out;
+    }
+
+    .vis_produkter:hover {
+        transform: scale(1.05);
     }
 
     /*** media Q enkeltsiden (min)1000px ***/
