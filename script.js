@@ -17,8 +17,10 @@
         if (erSkjult == true) {
             document.querySelector("#menuknap").textContent = "☰";
             document.querySelector("section").classList = "";
+            document.querySelector("#menuknap").style.color = "#3b3b3b";
         } else {
             document.querySelector("#menuknap").textContent = "X";
             document.querySelector("section").classList = "hidden";
+            document.querySelector("#menuknap").style.color = "white";
         }
     }

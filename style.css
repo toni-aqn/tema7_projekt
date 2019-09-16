@@ -126,6 +126,11 @@ li div {
 
 }
 
+.logo_burgermenu {
+    width: 170%;
+    margin: 40px 0 0 -50px;
+}
+
 
 
 /* Change the link color on hover */
