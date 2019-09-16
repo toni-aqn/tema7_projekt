@@ -504,7 +504,9 @@ article.plante {
         margin: 50px;
     }
 
-
+    .txt h1 {
+        margin: 50px 0;
+    }
 
 }
 
