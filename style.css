@@ -414,6 +414,7 @@ article.plante {
         z-index: 2;
         font-family: 'helvetica';
         font-size: 8vw;
+        cursor: pointer;
     }
 
     #menu {
