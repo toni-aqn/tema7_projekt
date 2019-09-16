@@ -126,6 +126,10 @@ li div {
 
 }
 
+.logo_burgermenu {
+    margin-top: 10vw;
+}
+
 
 
 /* Change the link color on hover */
@@ -416,7 +420,8 @@ article.plante {
         list-style-type: none;
         transition: transform .3s;
         transform-origin: top left;
-        background: rgb(103, 114, 77);
+        background-image: url(billeder/burgermenu_baggrund.png);
+        background-size: cover;
         z-index: 1;
         padding: 120px;
         padding-bottom: 100%;
