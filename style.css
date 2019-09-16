@@ -17,10 +17,17 @@
     font-style: normal;
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
     background-color: #E8E6E2;
     font-family: 'helvetica';
+
 }
 
 h1 {
@@ -60,10 +67,12 @@ footer {
     margin-top: 20px;
     padding: 10px;
     font-family: 'helvetica';
+
 }
 
 footer p {
     color: white;
+    margin: 20px 15px 20px 15px;
 }
 
 img {
@@ -363,19 +372,14 @@ article.plante {
 
 
 /************   7. MEDIA  Q  **************/
-@media screen and (min-width: 600px) {
+
+@media only screen and (min-width: 640px) {
+
     .data_container {
         grid-template-columns: repeat(2, 1fr);
 
     }
 
-    footer {
-        display: flex;
-        justify-content: space-between;
-    }
-}
-
-@media screen and (min-width: 640px) {
 
     .filter_knapper {
         display: flex;
@@ -501,7 +505,23 @@ article.plante {
         left: 20px;
     }
 
+    #om .txt,
+    #kontakt .txt {
+        margin: 50px;
+    }
+
+
+
 }
+
+@media only screen and (min-width: 800px) {
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
 
 @media only screen and (min-width: 1000px) {
 
