@@ -83,7 +83,7 @@ a {
 }
 
 .burgermenu {
-    color: white;
+    color: #3B3B3B;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -91,6 +91,11 @@ a {
     top: 0px;
     right: 0px;
     z-index: 500;
+}
+
+.min_kurv {
+    color: white;
+    padding-left: 0px;
 }
 
 li a {
