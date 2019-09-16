@@ -414,7 +414,7 @@ article.plante {
         list-style-type: none;
         transition: transform .3s;
         transform-origin: top left;
-        background: rgba(103, 114, 77, 0.74);
+        background: rgb(103, 114, 77);
         z-index: 1;
         padding: 120px;
         padding-bottom: 100%;
@@ -452,6 +452,7 @@ article.plante {
 
     li:nth-child(5) {
         padding: 7px;
+        margin-right: 20px;
 
     }
 
