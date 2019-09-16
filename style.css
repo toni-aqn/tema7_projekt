@@ -85,8 +85,6 @@ a {
 .burgermenu {
     color: #3B3B3B;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -127,7 +125,8 @@ li div {
 }
 
 .logo_burgermenu {
-    margin-top: 10vw;
+    margin: auto;
+    margin-top: 100px;
 }
 
 
@@ -423,12 +422,10 @@ article.plante {
         background-image: url(billeder/burgermenu_baggrund.png);
         background-size: cover;
         z-index: 1;
-        padding: 120px;
-        padding-bottom: 100%;
+        padding: 110px;
         margin-top: -10px;
-        margin-right: -10px;
         font-size: 20px;
-
+        margin-bottom: -10xp;
     }
 
     #menu li {
