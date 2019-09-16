@@ -16,7 +16,9 @@
 
         if (erSkjult == true) {
             document.querySelector("#menuknap").textContent = "☰";
+            document.querySelector("section").classList = "";
         } else {
             document.querySelector("#menuknap").textContent = "X";
+            document.querySelector("section").classList = "hidden";
         }
     }
