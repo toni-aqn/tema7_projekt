@@ -519,6 +519,11 @@ article.plante {
     .vis_produkter {
         font-size: 35px;
         padding: 20px 40px;
+        transition: all .2s ease-in-out;
+    }
+
+    .vis_produkter:hover {
+        transform: scale(1.05);
     }
 
     /*** media Q enkeltsiden (min)1000px ***/
