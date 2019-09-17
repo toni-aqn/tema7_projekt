@@ -55,6 +55,7 @@ p {
     font-family: 'helvetica';
     margin: 20px;
     color: #3B3B3B;
+    line-height: 20px;
 }
 
 .txt {
@@ -73,6 +74,10 @@ footer {
 footer p {
     color: white;
     margin: 20px 15px 20px 15px;
+}
+
+.enkelt_footer {
+    margin: 0px;
 }
 
 img {
@@ -281,9 +286,9 @@ article h2 {
 
 
 .enkelt_side {
-    width: 100vw;
+    /*    width: 100vw;
     height: 100vh;
-    margin-bottom: 80px;
+    margin-bottom: 80px;*/
 }
 
 button {
@@ -312,7 +317,7 @@ header .logo {
 }
 
 article.plante {
-    margin: -10px;
+    margin: -10px -10px -12.7px -10px;
 }
 
 .forhold {
@@ -504,7 +509,9 @@ article.plante {
         margin: 50px;
     }
 
-
+    .txt h1 {
+        margin: 50px 0;
+    }
 
 }
 
@@ -558,11 +565,12 @@ article.plante {
     }
 
     .enkelt_side p {
-        font-size: 13px;
+        font-size: 16px;
+        margin-top: 50px;
     }
 
     .enkelt_side .txt {
-        margin: 30px;
+        margin: 50px;
     }
 
     .forhold img {
