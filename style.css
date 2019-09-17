@@ -58,10 +58,10 @@ p {
     line-height: 20px;
 }
 
-.txt {
+/*.txt {
     margin-top: 50px;
     margin-bottom: 50px;
-}
+}*/
 
 footer {
     background-color: #6A7550;
@@ -295,10 +295,6 @@ button {
     padding: 5px;
 }
 
-.pris {
-    text-align: right;
-    margin-right: 10vw;
-}
 
 .tilbage_ikon {
     position: absolute;
@@ -313,7 +309,12 @@ header .logo {
 
 .enkelt_side p,
 .enkelt_side h2 {
-    margin: 20px;
+    margin: 40px 100px 20px 100px;
+}
+
+.pris {
+    text-align: right;
+    margin-right: 10vw;
 }
 
 article.plante {
@@ -323,7 +324,7 @@ article.plante {
 .forhold {
     display: flex;
     justify-content: space-around;
-    padding: 20px;
+    padding: 0px 30px 0px 30px;
 }
 
 .forhold img {
@@ -566,29 +567,30 @@ article.plante {
 
     .enkelt_side p {
         font-size: 16px;
-        margin-top: 50px;
+        /*        margin-top: 50px;*/
     }
 
-    .enkelt_side .txt {
+    /*.enkelt_side .txt {
         margin: 50px;
     }
-
+*/
     .forhold img {
         width: 50px;
     }
 
     .i_kurv {
-        margin-left: 25vw;
+        margin-right: 5vw;
     }
 
     .txt .pris {
         font-size: 25px;
-        padding-top: 20px;
+        padding: 20px 8px 30px 0px;
     }
 
     .forhold {
         text-align: center;
         margin-right: 15vw;
+        margin-left: 30px;
     }
 
     /*** Media Q produktsiden (min)1000px ***/
