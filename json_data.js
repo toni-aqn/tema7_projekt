@@ -28,10 +28,10 @@ function informationer() {
     console.log("køre");
 
 
-    //  indholdet i
+    //  indholdet for constanten listevisning nulstillet
     listevisning.innerHTML = "";
 
-
+    // plante-array gennemgåes plante for plante og listevisningen bliver udfyldt
     planter.feed.entry.forEach((plante) => {
 
         if (filter == "alle" || filter == plante.gsx$kategori.$t || filter == plante.gsx$favoritter.$t) {
@@ -39,6 +39,7 @@ function informationer() {
 
             const klon = template.cloneNode(true).content;
 
+            //placering for data fra json vælges
             klon.querySelector("img").src = `imgs/${plante.gsx$billede.$t}.jpg`;
             klon.querySelector("article h2").textContent = ` ${plante.gsx$navn.$t}`;
             klon.querySelector("article .kort_beskrivelse").textContent = ` ${plante.gsx$kort.$t}`;
@@ -54,12 +55,14 @@ function informationer() {
     });
 }
 
+//funktionen lytter efter om der bliver klikket på filterknapperne
 function addEventlistenerToButton() {
     document.querySelectorAll(".filter").forEach(elm => {
         elm.addEventListener("click", filtrering);
     });
 }
 
+//funktionen fortælle hvilke data der skal vises alt efter hvilken filterknap der klikkes på
 function filtrering() {
 
     if (this.dataset.kategori) {
