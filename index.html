@@ -52,8 +52,11 @@
 
         <h1 class="filterTekst">FAVORITTER</h1>
 
+
+        <!-- "data_container" er destinationen for vores template-->
         <section class="data_container"></section>
 
+        <!-- Vores webiste er gjort dynamisk ved at indsætte html på det her template vi har sat op -->
         <template>
             <article class="produkter_article">
                 <div class="billed_ramme">
@@ -64,7 +67,7 @@
 
             </article>
         </template>
-
+        <!-- Det data der sættes ind i vores template bliver hentet ind, efter vi løber vores liste af objekter igennem i javascript -->
 
         <footer>
             <p>FIGNESTRÆDE 12</p>
@@ -77,6 +80,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", hentjson);
+        console.log("DOMContentLoaded, hentjson funktion kaldt");
 
         let planter;
         let filter = "alle";
@@ -97,24 +101,27 @@
         }
 
         function informationer() {
-            console.log("køre");
+            console.log("informationer kaldt");
 
+            //Når funktionen køres, bliver alt forrigt html i templaten ryddet.
             listevisning.innerHTML = "";
 
-
+            // Vi løber derefter vores liste i gennem og siger for hver gsx$favoritter.$t der findes i vores json, skal der på html'en længere oppe (destinationen), sættes en klon ind. Da vi har 6 ting med en værdi i "favoritter" svarer det til 6 elementer der bliver vist.
             planter.feed.entry.forEach((plante) => {
 
                 if (plante.gsx$favoritter.$t) {
 
-
                     const klon = template.cloneNode(true).content;
 
+                    //Der bliver peget på de DOM-elementer vi gerne vil indsætte content på -> contentet henter vi gennem vores json
                     klon.querySelector("img").src = `imgs/${plante.gsx$billede.$t}.jpg`;
                     klon.querySelector("article h2").textContent = ` ${plante.gsx$navn.$t}`;
                     klon.querySelector("article .kort_beskrivelse").textContent = ` ${plante.gsx$kort.$t}`;
 
-
+                    //klon bliver smidt ind i vores data_container.
                     listevisning.appendChild(klon);
+
+                    //Klikker man på et af elementerne bliver man sendt hen til enkeltside.html med elementet's id som ligger i vores json (Singleview)
                     listevisning.lastElementChild.addEventListener("click", () => {
                         location.href = `enkeltside.html?nr=${plante.gsx$id.$t}`;
                     });
