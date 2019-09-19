@@ -146,8 +146,12 @@ li div {
 }
 
 .logo_burgermenu {
-    margin: auto;
-    margin-top: 100px;
+    margin: 100px 0 0 -55px;
+    background-image: url(logo/planteguru_white_logo_transparent_tyk.png);
+    background-size: cover;
+    width: 80vw;
+    height: 20vh;
+    padding: 0;
 }
 
 
@@ -374,7 +378,7 @@ article.plante {
 
 
 #kontakt h1 {
-    margin-bottom: 40px;
+    margin: 30px 0 40px 0;
 }
 
 .sm_ikoner {
@@ -453,7 +457,9 @@ article.plante {
         padding: 110px;
         margin-top: -10px;
         font-size: 20px;
-        margin-bottom: -10xp;
+        margin-bottom: -10px;
+        height: 100vh;
+        width: 100vw;
     }
 
     #menu li {
