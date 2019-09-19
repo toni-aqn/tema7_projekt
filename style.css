@@ -454,6 +454,7 @@ article.plante {
         margin-top: -10px;
         font-size: 20px;
         margin-bottom: -10px;
+        height: 100vh;
     }
 
     #menu li {
