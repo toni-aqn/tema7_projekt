@@ -146,7 +146,7 @@ li div {
 }
 
 .logo_burgermenu {
-    margin: 100px 0 0 -55px;
+    margin: 0;
     background-image: url(logo/planteguru_white_logo_transparent_tyk.png);
     background-size: cover;
     width: 80vw;
@@ -326,7 +326,7 @@ header .logo {
 
 .enkelt_side p,
 .enkelt_side h2 {
-    margin: 40px 100px 20px 100px;
+    margin: 40px 20px 20px 20px;
 }
 
 .pris {
@@ -425,6 +425,11 @@ article.plante {
         margin-bottom: -30px;
     }
 
+
+    .enkelt_side .beskrivelse,
+    .enkelt_side h2 {
+        margin: 40px 80px 20px 80px;
+    }
 }
 
 
@@ -454,12 +459,11 @@ article.plante {
         background-image: url(billeder/burgermenu_baggrund.png);
         background-size: cover;
         z-index: 1;
-        padding: 110px;
+        padding: 100px;
         margin-top: -10px;
         font-size: 20px;
-        margin-bottom: -10px;
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100w;
     }
 
     #menu li {
